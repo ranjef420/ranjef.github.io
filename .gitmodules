@@ -1,0 +1,3 @@
+[submodule "repo/skin.arcticfuse"]
+	path = repo/skin.arcticfuse
+	url = https://github.com/ranjef420/skin.arcticfuse.2
