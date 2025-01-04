@@ -1,4 +1,4 @@
-<addon id="skin.arcticfuse.2 name="Arctic Fuse 2" provider-name="RanJef420” version=“1.0”>
+<addon id="skin.arcticfuse" name="Arctic Fuse 2" provider-name="RanJef420" version="1.0.0">
     <requires>
         <import addon="xbmc.gui" version="5.17.0" />
         <import addon="script.skinvariables" version="2.1.14" />
@@ -27,7 +27,7 @@
         <source />
         <assets>
             <icon>icon.png</icon>
-            <fanart>fanart.jpg</fanart>
+            <fanart>fanart.png</fanart>
         </assets>
     </extension>
 </addon>
