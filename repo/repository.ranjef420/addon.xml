@@ -1,14 +1,14 @@
-<?xml version="2.0" encoding="UTF-8" standalone="yes"?>
-<addon id="repository.reef" name="Reef's Repository" version="2.0" provider-name="RanJef">
-    <extension point="xbmc.addon.repository" name="Reef's Repository">
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="repository.ranjef420" name="Reef's Repo" version="2.0" provider-name="ranjef420">
+    <extension point="xbmc.addon.repository" name="Reef's Repo">
         <dir>
-            <info compressed="false">https://raw.githubusercontent.com/ranjef420/repository.reef/master/repo/zips/addons.xml</info>
-            <checksum>https://raw.githubusercontent.com/ranjef420/repository.reef/master/repo/zips/addons.xml.md5</checksum>
-            <datadir zip="true">https://raw.githubusercontent.com/ranjef420/repository.reef/master/repo/zips/</datadir>
+            <info compressed="false">https://raw.githubusercontent.com/ranjef420/repository.ranjef420/master/repo/zips/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/ranjef420/repository.ranjef420/master/repo/zips/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/ranjef420/repository.ranjef420/master/repo/zips/</datadir>
         </dir>
     </extension>
     <extension point="xbmc.addon.metadata">
-        <summary>Reef's Repository</summary>
+        <summary>Reef's Repo</summary>
         <description>Repository for Kodi projects</description>
         <disclaimer></disclaimer>
         <platform>all</platform>
