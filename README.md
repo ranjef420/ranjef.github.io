@@ -1,154 +1,170 @@
-# Nick's starting repo:
-- URL: https://github.com/ranjef420/repository.ranjef420/tree/master
-- Structure:
-  
-  ranjef420/repository.ranjef420/
-    ├── .gitignore
-    ├── .gitmodules
-    ├── README.md
-    ├── _repo_generator.py
-    ├── index.html
-    └── repo/
-        ├── repository.ranjef420/
-        │   ├── addons.xml
-        │   ├── fanart.jpg
-        │   └── icon.png
-        └── zips/
-            ├── addons.xml
-            ├── addons.xml.md5
-            └── repository.ranjef420/
-                ├── addons.xml
-                ├── fanart.jpg
-                └── icon.png
+# Reef's Repo - Kodi Repository
 
-- Problems:
-xml files all need to be updated
-DO NOT CONFLATE DEPRECIATED XML CONTENTS OR CONTENTS OF TEXT IN EXAMPLE FILES, FOLDERS, OR VARIABLES WITH NICK's chosen variables below:
-Variables to enforce:
-- addon id="repository.ranjef420"
-- name="Reef's Repo"
-- version="2.0"
-- provider-name="ranjef420"
+A Kodi add-on repository hosted on GitHub Pages.
 
-INSTRUCTIONS:
+## Repository Information
 
-# BASIC - How to setup for hosting on GitHub Pages
+- **Version:** 2.0
+- **Kodi File Manager URL:** https://ranjef420.github.io/repository.ranjef420/
 
-In order to follow this tutorial, first [use this repository as a template](https://github.com/drinfernoo/repository.example/generate) for a new repository, and then clone your newly created repository locally. For the simplest file manager source URL, it is recommended to name your newly created repository as `YOUR_USERNAME_HERE.github.io`.
-
-### Creating your repository add-on
----
-First, you'll need to edit the `addon.xml` file within the example `https://github.com/drinfernoo/repository.example/repo/repository.example` folder with your chosen add-on ID, a version number, and your username (or whatever you'd like) for `provider`, as seen on line 2:
-
-```XML
-<addon id="ADDON_ID_HERE" name="REPO_NAME_HERE" version="VERSION_NUMBER_HERE" provider-name="YOUR_USERNAME_HERE">
+## Repository Structure
+```
+ranjef420/repository.ranjef420/
+├── .gitignore
+├── README.md
+├── _repo_generator.py
+├── index.html
+└── repo/
+    ├── repository.ranjef420/
+    │   ├── addon.xml
+    │   ├── fanart.jpg
+    │   └── icon.png
+    └── zips/
+        ├── addons.xml
+        ├── addons.xml.md5
+        └── repository.ranjef420/
+            ├── addon.xml
+            ├── fanart.jpg
+            ├── icon.png
+            └── repository.ranjef420-2.0.zip
 ```
 
-You also need to replace `YOUR_USERNAME_HERE`, `REPOSITORY_NAME_HERE`, and `BRANCH_NAME_HERE` with your GitHub username, this repository's name, and the name of the branch (it's recommended to use the default branch, ususally `master` or `main`) respectively, as seen on lines 4-8:
+## Installing in Kodi
 
-```XML
-<dir>
-    <info compressed="false">https://raw.githubusercontent.com/YOUR_USERNAME_HERE/REPOSITORY_NAME_HERE/BRANCH_NAME_HERE/repo/zips/addons.xml</info>
-    <checksum>https://raw.githubusercontent.com/YOUR_USERNAME_HERE/REPOSITORY_NAME_HERE/BRANCH_NAME_HERE/repo/zips/addons.xml.md5</checksum>
-    <datadir zip="true">https://raw.githubusercontent.com/YOUR_USERNAME_HERE/REPOSITORY_NAME_HERE/BRANCH_NAME_HERE/repo/zips/</datadir>
-</dir>
+### Step 1: Add Source to File Manager
+
+1. Open Kodi and go to the home screen
+2. Click the **Settings** icon (gear icon)
+3. Select **File Manager**
+4. Click **Add source** (on the left side)
+5. Click **<None>**
+6. Type exactly: `https://ranjef420.github.io/repository.ranjef420/`
+7. Click **OK**
+8. Click the box below "Enter a name for this media source"
+9. Type: `Reef's Repo` (or any name you prefer)
+10. Click **OK**
+
+### Step 2: Install Repository from Zip
+
+1. Return to Kodi home screen
+2. Click **Settings** icon (gear icon)
+3. Select **Add-ons**
+4. Click **Install from zip file**
+   - If you see a warning about unknown sources, click **Settings**, enable **Unknown sources**, click **Yes** on the warning, then go back and click **Install from zip file** again
+5. Select **Reef's Repo** (the name you entered in Step 1)
+6. Click **repository.ranjef420-2.0.zip**
+7. Wait for the notification: "Reef's Repo Add-on installed"
+
+### Step 3: Enable Automatic Updates
+
+1. Go to **Settings** > **Add-ons**
+2. Click **My add-ons**
+3. Select **Program add-ons** (or wherever Reef's Repo appears)
+4. Click **Reef's Repo**
+5. Click **Configure** (or the settings icon)
+6. Ensure **Auto-update** is set to **On** (this is usually enabled by default)
+7. Click **OK**
+
+### Step 4: Verify Automatic Updates System-Wide
+
+1. Go to **Settings** > **System** (or **Settings** > **Player** depending on Kodi version)
+2. Click **Add-ons** (in the left menu)
+3. Ensure **Updates** is set to **Automatic** (not "Notify" or "Off")
+4. This ensures all add-ons from your repository will update automatically
+
+### Step 5: Verify Installation
+
+1. Go to **Settings** > **Add-ons**
+2. Click **Install from repository**
+3. You should see **Reef's Repo** in the list
+4. Click it to browse available add-ons
+
+## Maintaining the Repository
+
+### Adding a New Add-on
+
+1. Open terminal in the repository root folder
+2. Add the add-on as a Git submodule:
+```bash
+   git submodule add https://github.com/username/addon-name repo/addon-name
+```
+3. Update the add-on and bump its version number in its `addon.xml`
+4. Generate repository files:
+```bash
+   python3 _repo_generator.py
+```
+5. Review changes:
+```bash
+   git status
+   git diff
+```
+6. Commit and push:
+```bash
+   git add .
+   git commit -m "Add addon-name version X.X.X"
+   git push origin master
 ```
 
-You should also change the summary and description of your repository, as seen on lines 11-12:
+### Updating an Existing Add-on
 
-```XML
-<summary>REPO_NAME_HERE</summary>
-<description>DESCRIPTION OF YOUR REPO HERE</description>
+1. Navigate to the add-on's submodule directory:
+```bash
+   cd repo/addon-name
+```
+2. Update to the latest version and bump version number in `addon.xml`
+3. Return to repository root:
+```bash
+   cd ../..
+```
+4. Update submodule reference:
+```bash
+   git submodule update --remote repo/addon-name
+```
+5. Regenerate repository files:
+```bash
+   python3 _repo_generator.py
+```
+6. (Optional) Clean up old zip files:
+```bash
+   # Manually delete older versions from repo/zips/addon-name/
+```
+7. Commit and push:
+```bash
+   git add .
+   git commit -m "Update addon-name to version X.X.X"
+   git push origin master
 ```
 
-While not required, it is also recommended to replace `icon.png` and `fanart.jpg` in the `repository.example` folder with art relevant to your repository or the add-ons contained within. `icon.png` should be 512x512 px, and `fanart.jpg` should be 1920x1080 px, or a similar ratio.
+### GitHub Pages Deployment
 
-Finally, rename the `repository.example` folder to match whatever add-on ID you chose earlier.
+Changes pushed to the `master` branch automatically trigger a GitHub Pages deployment. The repository becomes available at:
+- **Base URL:** https://ranjef420.github.io/repository.ranjef420/
+- **Repository Zip:** https://ranjef420.github.io/repository.ranjef420/repository.ranjef420-2.0.zip
 
-### Adding add-ons to your repository
----
-To build the repository, first place the add-on source folders for whichever add-ons you'd like to be contained in your Kodi repo inside this repository. For ease of updating included add-ons, the recommended method of doing this is via [Git Submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules), which are supported by many Git clients, as well as the Git terminal. If you choose not to use submodules, you'll need to simply copy the source folders directly into this repository.
+Deployment typically completes within 2-3 minutes. Check deployment status at:
+https://github.com/ranjef420/repository.ranjef420/actions
 
-The `_repo_xml_generator.py` script included in this repository with build `.zip` files for each included add-on, as well as generating the necessary `addons.xml` and `addons.xml.md5` files, so that Kodi can infer the contents of the repo. It is designed to handle multiple versions of Kodi (for example, to serve different add-ons to Leia than are served to Matrix), and single repositories that serve the same add-ons to all Kodi versions.
+## Technical Details
 
-##### Same add-ons to all versions (default)
----
-Place your add-on source folders in the `repo` folder of this repository.
-##### Different add-ons to different versions (advanced)
----
-Place your add-on source folders into a folder named after the version of Kodi you wish to serve from it, instead of `/repo`. For example, `/leia` for a Leia-focused repo, or `/matrix` for a Matrix-focused one. In order for your repository to be able to differentiate which add-ons to serve, you'll need to add a new `dir` section to your `addon.xml`, that defines which versions should be served.
+- **Generator Script:** `_repo_generator.py` (version 5)
+- **Supported Kodi Versions:** Krypton, Leia, Matrix, Nexus, and generic
+- **Hosting:** GitHub Pages
+- **Update Method:** Automatic via GitHub Actions workflow
 
-For example, to serve Leia only:
-```XML
-<dir minversion="18.0.0" maxversion="18.9.9">
-    <info compressed="false">https://raw.githubusercontent.com/YOUR_USERNAME_HERE/REPOSITORY_NAME_HERE/DEFAULT_BRANCH_NAME_HERE/leia/zips/addons.xml</info>
-    <checksum>https://raw.githubusercontent.com/YOUR_USERNAME_HERE/REPOSITORY_NAME_HERE/DEFAULT_BRANCH_NAME_HERE/leia/zips/addons.xml.md5</checksum>
-    <datadir zip="true">https://raw.githubusercontent.com/YOUR_USERNAME_HERE/REPOSITORY_NAME_HERE/DEFAULT_BRANCH_NAME_HERE/leia/zips/</datadir>
-</dir>
-```
-And for Matrix and up:
-```XML
-<dir minversion="19.0.0">
-    <info compressed="false">https://raw.githubusercontent.com/YOUR_USERNAME_HERE/REPOSITORY_NAME_HERE/DEFAULT_BRANCH_NAME_HERE/matrix/zips/addons.xml</info>
-    <checksum>https://raw.githubusercontent.com/YOUR_USERNAME_HERE/REPOSITORY_NAME_HERE/DEFAULT_BRANCH_NAME_HERE/matrix/zips/addons.xml.md5</checksum>
-    <datadir zip="true">https://raw.githubusercontent.com/YOUR_USERNAME_HERE/REPOSITORY_NAME_HERE/DEFAULT_BRANCH_NAME_HERE/matrix/zips/</datadir>
-</dir>
-```
----
-After adding your source folders, simply run `_repo_generator.py`. This will create `.zip`s of all of the desired add-ons, and place them in subfolders called `zips`, along with the generated `addons.xml` and `addons.xml.md5`. As of version 3, this script can create distributions for Krypton, Leia, Matrix, and Nexus, as well as the generic "repo", which is intended to serve to any version (like for the repository itself, or any cross-version libraries and dependencies).
+## Troubleshooting
 
-### Make your repository zip installable inside Kodi
----
-Copy the zip file of your repository, located at `REPO_FOLDER/zips/ADDON_ID_HERE/ADDON_ID_HERE-VERSION_NUMBER_HERE.zip`,
-and paste it into the root folder.
+### Repository Not Updating in Kodi
+- Wait 2-3 minutes after pushing changes for GitHub Pages to deploy
+- Clear Kodi's cache: Settings > System > Add-ons > Clear cache
+- Force update: Settings > Add-ons > My add-ons > Reef's Repo > Update
 
-Edit the link inside `index.html` to reflect your add-on's filename, as seen on line 1:
+### Deployment Failures
+- Check GitHub Actions: https://github.com/ranjef420/repository.ranjef420/actions
+- Common issues:
+  - Broken Git submodule references
+  - Invalid `addon.xml` files
+  - File size exceeding GitHub Pages limits (100MB per file)
 
-```HTML
-<a href="ADDON_ID_HERE-VERSION_NUMBER_HERE.zip">ADDON_ID_HERE-VERSION_NUMBER_HERE.zip</a>
-```
+## Credits
 
-After committing and pushing these changes to your repo, go to the "Settings" section for this repository on GitHub. In the first box, labeled "Repository name", change your repository's name. Generally, GitHub Pages repositories are named `YOUR_USERNAME_HERE.github.io`,  but it can be whatever you'd like.
-Next, scroll down to the "GitHub Pages" section, choose the default branch (or whichever you chose when modifying your `addon.xml`) as the source, and click "Save".
-
-After that, you should be all done!
-
-If you named this repository `YOUR_USERNAME_HERE.github.io` (as recommended), your file manager source will be:
-
-`https://YOUR_USERNAME_HERE.github.io/`
-
-If you named it something else, it will be:
-
-`https://YOUR_USERNAME_HERE.github.io/REPOSITORY_NAME_HERE/`
-
-# ADVANCED - How to set up for hosting without GitHub Pages
-
-If you want to host your Kodi repo on a different host besides GitHub Pages, simply download this repository as a `.zip`, and unzip it, rather than using it as a template. Continue to follow the rest of the setup procedure, except for the setting up of GitHub Pages. The only differences will be in your `addon.xml` file, as it will need to reference your host, rather than GitHub:
-
-```XML
-<dir>
-    <info compressed="false">https://YOUR_HOST_URL_HERE/repo/zips/addons.xml</info>
-    <checksum>https://YOUR_HOST_URL_HERE/repo/zips/addons.xml.md5</checksum>
-    <datadir zip="true">https://YOUR_HOST_URL_HERE/repo/zips/</datadir>
-</dir>
-```
-
-And upload the contents of this repository to your host. It is **very important** that `YOUR_HOST_URL_HERE` is the URL to the *root* folder of this repository.
-
-After doing so, your file manager source will be:
-
-`https://YOUR_HOST_URL_HERE/`
-
-### Pushing an update
-
-0.    To add a new addon, open terminal in repo folder: git submodule add https://github.com/ivarbrandt/xyz
-1.    Update the addon and bump the addon version number
-2.    git submodule update --remote
-3.    python3 _repo_generator.py 
-3a.   Manually delete older zip files now if needed
-3b.   git maintenance start / run
-4.    git diff / ls / git status to check
-5.    git add .
-6.    git commit -m "commit comment"
-7.    git push origin
-
+Repository structure based on [drinfernoo/repository.example](https://github.com/drinfernoo/repository.example)
