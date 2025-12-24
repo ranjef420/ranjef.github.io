@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="repository.reef" name="Reef's Repository" version="1.0" provider-name="RanJef">
+<?xml version="2.0" encoding="UTF-8" standalone="yes"?>
+<addon id="repository.reef" name="Reef's Repository" version="2.0" provider-name="RanJef">
     <extension point="xbmc.addon.repository" name="Reef's Repository">
         <dir>
             <info compressed="false">https://raw.githubusercontent.com/ranjef420/repository.reef/master/repo/zips/addons.xml</info>
