@@ -1,11 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
-<addons><addon id="plugin.video.skipintro" name="Skip Intro" version="2.0" provider-name="RanJef">
+<addons><addon id="plugin.video.skipintro" name="Skip Intro" version="2.1" provider-name="RanJef">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
     </requires>
 
     <extension point="xbmc.service" library="default.py">
-        <provides>video</provides>
     </extension>
 
     <extension point="kodi.context.item" library="context.py">
