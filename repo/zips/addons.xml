@@ -6,7 +6,7 @@
     </requires>
     <extension point="xbmc.service" library="default.py">
     </extension>
-    <extension point="kodi.context. item" library="context.py">
+    <extension point="kodi.context.item" library="context.py">
         <item>
             <label>Set Skip Intro Times</label>
             <visible>[String.IsEqual(ListItem.DBType,episode) |
