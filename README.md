@@ -1,10 +1,44 @@
+# Nick's starting repo:
+- URL: https://github.com/ranjef420/repository.ranjef420/tree/master
+- Structure:
+  
+  ranjef420/repository.ranjef420/
+    ├── .gitignore
+    ├── .gitmodules
+    ├── README.md
+    ├── _repo_generator.py
+    ├── index.html
+    └── repo/
+        ├── repository.ranjef420/
+        │   ├── addons.xml
+        │   ├── fanart.jpg
+        │   └── icon.png
+        └── zips/
+            ├── addons.xml
+            ├── addons.xml.md5
+            └── repository.ranjef420/
+                ├── addons.xml
+                ├── fanart.jpg
+                └── icon.png
+
+- Problems:
+xml files all need to be updated
+DO NOT CONFLATE DEPRECIATED XML CONTENTS OR CONTENTS OF TEXT IN EXAMPLE FILES, FOLDERS, OR VARIABLES WITH NICK's chosen variables below:
+Variables to enforce:
+- addon id="repository.ranjef420"
+- name="Reef's Repo"
+- version="2.0"
+- provider-name="ranjef420"
+
+INSTRUCTIONS:
+
 # BASIC - How to setup for hosting on GitHub Pages
 
 In order to follow this tutorial, first [use this repository as a template](https://github.com/drinfernoo/repository.example/generate) for a new repository, and then clone your newly created repository locally. For the simplest file manager source URL, it is recommended to name your newly created repository as `YOUR_USERNAME_HERE.github.io`.
 
 ### Creating your repository add-on
 ---
-First, you'll need to edit the `addon.xml` file within the `/repo/repository.example` folder with your chosen add-on ID, a version number, and your username (or whatever you'd like) for `provider`, as seen on line 2:
+First, you'll need to edit the `addon.xml` file within the example `https://github.com/drinfernoo/repository.example/repo/repository.example` folder with your chosen add-on ID, a version number, and your username (or whatever you'd like) for `provider`, as seen on line 2:
 
 ```XML
 <addon id="ADDON_ID_HERE" name="REPO_NAME_HERE" version="VERSION_NUMBER_HERE" provider-name="YOUR_USERNAME_HERE">
