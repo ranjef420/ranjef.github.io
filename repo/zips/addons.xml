@@ -1,42 +1,12 @@
 <?xml version='1.0' encoding='utf-8'?>
-<addons><addon id="plugin. video.yt4kodi" name="YouTube for Kodi" version="1.0.0" provider-name="RanJef">
-    <requires>
-        <import addon="xbmc.python" version="3.0.0" />
-        <import addon="script.module.requests" version="2.27.1" />
-        <import addon="inputstream.adaptive" version="19.0.0" />
-        <import addon="script.module. inputstreamhelper" version="0.2.2" optional="true" />
-        <import addon="script.module. pysocks" optional="true" />
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="resources/lib/plugin. py">
-        <provides>video</provides>
-    </extension>
-    <extension point="xbmc.service" library="resources/lib/service.py" />
-    <extension point="xbmc.python.module" library="resources/lib/" />
-    <extension point="xbmc.python.script" library="resources/lib/script.py">
-        <provides>executable</provides>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-        <assets>
-            <icon>resources/media/icon.png</icon>
-            <fanart>resources/media/fanart.jpg</fanart>
-        </assets>
-        <platform>all</platform>
-        <license>GPL-2.0-only</license>
-        <website>https://github.com/ranjef420/plugin.video. youtube</website>
-        <source>https://github.com/ranjef420/plugin.video.youtube</source>
-        <reuselanguageinvoker>true</reuselanguageinvoker>
-        <summary lang="en_GB">Private YouTube plugin for Kodi</summary>
-        <description lang="en_GB">YouTube is one of the biggest video-sharing websites of the world. This is a private version for personal use. </description>
-    </extension>
-</addon><addon id="plugin.video.skipintro" name="Skip Intro" version="2.1" provider-name="RanJef">
+<addons>
+<addon id="plugin.video.skipintro" name="Skip Intro" version="2.1" provider-name="RanJef">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
     </requires>
-
     <extension point="xbmc.service" library="default.py">
     </extension>
-
-    <extension point="kodi.context.item" library="context.py">
+    <extension point="kodi.context. item" library="context.py">
         <item>
             <label>Set Skip Intro Times</label>
             <visible>[String.IsEqual(ListItem.DBType,episode) |
@@ -44,36 +14,27 @@
                 !String.IsEmpty(ListItem.Path)</visible>
         </item>
     </extension>
-
     <extension point="xbmc.gui.skin" debugging="true" effectslowdown="1.0">
         <res width="1280" height="720" aspect="16:9" default="true" folder="resources/skins/default/720p" />
     </extension>
-
     <extension point="xbmc.addon.metadata">
         <summary lang="en">Smart intro/outro detection and skipping for TV shows</summary>
-        <summary lang="zh">电视剧智能片头/片尾检测与跳过</summary>
-        <description lang="en">This add-on automatically detects and remembers intro/outro times for
-            TV shows. Features include:
-            - Automatic show and episode detection
-            - Saves intro/outro times for future playback
-            - Smart chapter detection using ffmpeg (will notify if not installed)
-            - Chapter-based or manual time input for setting skip times
-            - Configurable skip settings and database options</description>
+        <description lang="en">This add-on automatically detects and remembers intro/outro times for TV shows. Features include: Automatic show and episode detection, Saves intro/outro times for future playback, Smart chapter detection using ffmpeg, Chapter-based or manual time input for setting skip times, Configurable skip settings and database options</description>
         <platform>all</platform>
         <assets>
             <icon>resources/icon.png</icon>
         </assets>
-
     </extension>
-</addon><addon id="plugin.video.yt4kodi" name="YouTube for Kodi" version="1.0.0" provider-name="RanJef">
+</addon>
+<addon id="plugin.video.yt4kodi" name="YouTube for Kodi" version="1.0.0" provider-name="RanJef">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
         <import addon="script.module.requests" version="2.27.1" />
         <import addon="inputstream.adaptive" version="19.0.0" />
-        <import addon="script.module. inputstreamhelper" version="0.2.2" optional="true" />
-        <import addon="script.module. pysocks" optional="true" />
+        <import addon="script.module.inputstreamhelper" version="0.2.2" optional="true" />
+        <import addon="script.module.pysocks" optional="true" />
     </requires>
-    <extension point="xbmc.python.pluginsource" library="resources/lib/plugin. py">
+    <extension point="xbmc.python.pluginsource" library="resources/lib/plugin.py">
         <provides>video</provides>
     </extension>
     <extension point="xbmc.service" library="resources/lib/service.py" />
@@ -88,13 +49,14 @@
         </assets>
         <platform>all</platform>
         <license>GPL-2.0-only</license>
-        <website>https://github.com/ranjef420/plugin.video. youtube</website>
+        <website>https://github.com/ranjef420/plugin.video.youtube</website>
         <source>https://github.com/ranjef420/plugin.video.youtube</source>
         <reuselanguageinvoker>true</reuselanguageinvoker>
-        <summary lang="en_GB">Private YouTube plugin for Kodi</summary>
-        <description lang="en_GB">YouTube is one of the biggest video-sharing websites of the world. This is a private version for personal use. </description>
+        <summary lang="en_GB">YouTube for Kodi</summary>
+        <description lang="en_GB">Custom YouTube version for personal use.</description>
     </extension>
-</addon><addon id="repository.ranjef420" name="Reef's Repo" version="2.0" provider-name="ranjef420">
+</addon>
+<addon id="repository.ranjef420" name="Reef's Repo" version="2.0" provider-name="ranjef420">
     <extension point="xbmc.addon.repository" name="Reef's Repo">
         <dir>
             <info compressed="false">https://raw.githubusercontent.com/ranjef420/repository.ranjef420/master/repo/zips/addons.xml</info>
@@ -112,54 +74,5 @@
             <fanart>fanart.jpg</fanart>
         </assets>
     </extension>
-</addon><addon id="repository.reef" name="Reef's Repository" version="1.0" provider-name="RanJef">
-    <extension point="xbmc.addon.repository" name="Reef's Repository">
-        <dir>
-            <info compressed="false">https://raw.githubusercontent.com/ranjef420/repository.reef/master/repo/zips/addons.xml</info>
-            <checksum>https://raw.githubusercontent.com/ranjef420/repository.reef/master/repo/zips/addons.xml.md5</checksum>
-            <datadir zip="true">https://raw.githubusercontent.com/ranjef420/repository.reef/master/repo/zips/</datadir>
-        </dir>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-        <summary>Reef's Repository</summary>
-        <description>Repository for Kodi projects</description>
-        <disclaimer />
-        <platform>all</platform>
-        <assets>
-            <icon>icon.png</icon>
-            <fanart>fanart.jpg</fanart>
-        </assets>
-    </extension>
-</addon><addon id="skin.arcticfuse" name="Arctic Fuse 2" provider-name="RanJef420" version="1.0.0">
-    <requires>
-        <import addon="xbmc.gui" version="5.17.0" />
-        <import addon="script.skinvariables" version="2.1.14" />
-        <import addon="script.texturemaker" version="0.2.9" />
-        <import addon="plugin.video.themoviedb.helper" version="5.4.19" />
-        <import addon="resource.images.weathericons.white" version="0.0.1" />
-        <import addon="resource.images.studios.coloured" version="0.0.1" />
-        <import addon="resource.font.robotocjksc" version="0.0.2" />
-    </requires>
-    <extension debugging="false" defaultthemename="Textures.xbt" effectslowdown="1" point="xbmc.gui.skin">
-        <res aspect="16:9" default="true" folder="1080i" width="1920" height="1080" />
-        <res aspect="3:2" default="false" folder="1080i" width="1620" height="1080" />
-        <res aspect="4:3" default="false" folder="1080i" width="1440" height="1080" />
-        <res aspect="16:10" default="false" folder="1080i" width="1728" height="1080" />
-        <res aspect="17:9" default="false" folder="1080i" width="2040" height="1080" />
-        <res aspect="21:9" default="false" folder="1080i" width="2520" height="1080" />
-        <res aspect="19.5:9" default="false" folder="1080i" width="2340" height="1080" />
-        <res aspect="18:9" default="false" folder="1080i" width="2160" height="1080" />
-    </extension>
-    <extension point="xbmc.addon.metadata">
-        <summary lang="en">A minimal row based skin</summary>
-        <description lang="en">Arctic Fuse 2 is a minimal row based skin with customisable widgets</description>
-        <platform>all</platform>
-        <license>Creative Commons Attribution Non-Commercial Share-Alike 4.0</license>
-        <forum />
-        <source />
-        <assets>
-            <icon>icon.png</icon>
-            <fanart>fanart.png</fanart>
-        </assets>
-    </extension>
-</addon></addons>
+</addon>
+</addons>
