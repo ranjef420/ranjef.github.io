@@ -1,0 +1,3 @@
+[submodule "repo/plugin.video.skipintro"]
+	path = repo/plugin.video.skipintro
+	url = https://github.com/ranjef420/plugin.video.skipintro

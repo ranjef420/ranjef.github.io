@@ -1,0 +1,43 @@
+<addon id="plugin.video.skipintro"
+    name="Skip Intro"
+    version="2.0"
+    provider-name="RanJef">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0" />
+    </requires>
+
+    <extension point="xbmc.service" library="default.py">
+        <provides>video</provides>
+    </extension>
+
+    <extension point="kodi.context.item" library="context.py">
+        <item>
+            <label>Set Skip Intro Times</label>
+            <visible>[String.IsEqual(ListItem.DBType,episode) |
+                String.IsEqual(ListItem.DBType,tvshow)] +
+                !String.IsEmpty(ListItem.Path)</visible>
+        </item>
+    </extension>
+
+    <extension point="xbmc.gui.skin" debugging="true" effectslowdown="1.0">
+        <res width="1280" height="720" aspect="16:9" default="true"
+            folder="resources/skins/default/720p" />
+    </extension>
+
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">Smart intro/outro detection and skipping for TV shows</summary>
+        <summary lang="zh">电视剧智能片头/片尾检测与跳过</summary>
+        <description lang="en">This add-on automatically detects and remembers intro/outro times for
+            TV shows. Features include:
+            - Automatic show and episode detection
+            - Saves intro/outro times for future playback
+            - Smart chapter detection using ffmpeg (will notify if not installed)
+            - Chapter-based or manual time input for setting skip times
+            - Configurable skip settings and database options</description>
+        <platform>all</platform>
+        <assets>
+            <icon>resources/icon.png</icon>
+        </assets>
+
+    </extension>
+</addon>
