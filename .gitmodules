@@ -1,6 +1,0 @@
-[submodule "repo/plugin.video.skipintro"]
-	path = repo/plugin.video.skipintro
-	url = https://github.com/ranjef420/plugin.video.skipintro
-[submodule "repo/plugin.video.yt4kodi"]
-	path = repo/plugin.video.yt4kodi
-	url = https://github.com/ranjef420/plugin.video.youtube
